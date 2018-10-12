@@ -6,6 +6,7 @@ import me.ramswaroop.jbot.core.common.EventType;
 import me.ramswaroop.jbot.core.common.JBot;
 import me.ramswaroop.jbot.core.slack.Bot;
 import me.ramswaroop.jbot.core.slack.models.Event;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -19,11 +20,15 @@ import javax.annotation.PostConstruct;
 @Slf4j
 public class SlackBotService extends Bot {
 
+    @Autowired
+    private CommandParsingService commandParsingService;
+
     @Controller(events = {EventType.DIRECT_MENTION})
     public void onReceiveDM(WebSocketSession session, Event event) {
         String text = event.getText();
         log.info(text);
-        reply(session, event, "Hello i'm a bot");
+        String commandList = commandParsingService.parseCommand(event.getText());
+        reply(session, event, commandList);
     }
 
     @Value("${slackBotToken}")
