@@ -1,8 +1,7 @@
 package ac.knu.service;
 
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
+import java.util.StringTokenizer;
 
 @Service
 public class CommandParsingService
@@ -13,17 +12,18 @@ public class CommandParsingService
     }
     public String parseCommand(String command)
     {
-        String[] words = command.split(" ");
-        if(stringLine[1].equalsIgnoreCase("time"))
+        StringTokenizer words = new StringTokenizer(command, " ");
+        switch(words.nextToken())
         {
-            return "(JSK)Current time is " + new Date();
+            case "add":
+                return "add done!";
+            case "remove":
+                return "remove done!";
+            case "list":
+                return "list done!";
+            case "find":
+                return "find done!";
         }
-        String result = "";
-        for (int i = 0; i < commandList.size(); i++) {
-            result += commandList.get(i) + ",";
-        }
-        result = result.substring(0, result.lastIndexOf(","));
-
-        return result;
+        return "Not command";
     }
 }
