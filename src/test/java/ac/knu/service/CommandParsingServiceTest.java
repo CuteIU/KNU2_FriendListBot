@@ -14,23 +14,23 @@ public class CommandParsingServiceTest
         commandParsingService = new CommandParsingService();
     }
     @Test
-    public void bot_should_understand_add_command() {
-        String command = commandParsingService.parseCommand("add");
+    public void bot_should_word_add_command() {
+        String command = commandParsingService.parseCommand("add 김재성 22 M");
         assertTrue("add done!" == command);
     }
     @Test
-    public void bot_should_understand_remove_command() {
-        String command = commandParsingService.parseCommand("remove");
+    public void bot_should_work_remove_command() {
+        String command = commandParsingService.parseCommand("remove 김재성");
         assertTrue("remove done!" == command);
     }
     @Test
-    public void bot_should_understand_list_command() {
+    public void bot_should_work_list_command() {
         String command = commandParsingService.parseCommand("list");
         assertTrue("list done!" == command);
     }
     @Test
-    public void bot_should_understand_find_command() {
-        String command = commandParsingService.parseCommand("find");
+    public void bot_should_work_find_command() {
+        String command = commandParsingService.parseCommand("find 김재성");
         assertTrue("find done!" == command);
     }
 }
