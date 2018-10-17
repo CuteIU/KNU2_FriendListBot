@@ -8,15 +8,15 @@
 
 ## Function
 1. 친구 추가
-`@bot add <name> <age> <gender>`
+> `@bot add <name> <age> <gender>`
 2. 친구 삭제
-`@bot remove <name>`
+> `@bot remove <name>`
 3. 친구 찾기
-`@bot find <name>`
+> `@bot find <name>`
 4. 친구 리스트
-`@bot list`
+> `@bot list`
 5. 현재 시간
-`@bot time`
+> `@bot time`
 
 ## Constraints
 - 친구는 최대 10명까지 추가
@@ -34,9 +34,8 @@ ArrayList와 LinkedList를 비교해보자면, 배열을 기반으로 구현되�
 
 따라서, 1000명 이상의 사람을 저장할 때는 정렬된 연결 리스트(Sorted Linked List)를 사용하는 것이 효과적일 것으로 보인다.
 
-- 출처
-검색 알고리즘의 시간 복잡도: <http://zelord.tistory.com/11>
-
-Linked List와 Array List: <http://www.nextree.co.kr/p6506/>
+## Sources
+- 검색 알고리즘의 시간 복잡도: <http://zelord.tistory.com/11>
+- Linked List와 Array List: <http://www.nextree.co.kr/p6506/>
 
 
