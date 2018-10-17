@@ -3,10 +3,10 @@ package ac.knu.service;
 import lombok.Getter;
 
 enum Gender{
-    Male, Female;
+    M, F
 }
 @Getter
-public class Friend {
+public class Friend implements Comparable<Friend> {
     private String name;
     private int age;
     private Gender gender;
@@ -15,5 +15,9 @@ public class Friend {
         this.name = name;
         this.age = age;
         this.gender = gender;
+    }
+    public int compareTo(Friend friend)
+    {
+        return name.compareTo(friend.getName());
     }
 }

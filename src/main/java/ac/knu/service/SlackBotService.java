@@ -22,13 +22,14 @@ public class SlackBotService extends Bot
 {
     @Autowired
     private CommandParsingService commandParsingService;
+    private SortedArrayList<Friend> friendList = new SortedArrayList<>();
 
     @Controller(events = {EventType.DIRECT_MENTION})
     public void onReceiveDM(WebSocketSession session, Event event)
     {
         String text = event.getText();
         log.info(text);
-        String answer = commandParsingService.parseCommand(text);
+        String answer = commandParsingService.parseCommand(text, friendList);
         reply(session, event, answer);
     }
 
