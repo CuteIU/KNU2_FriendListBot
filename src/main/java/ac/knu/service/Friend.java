@@ -1,23 +1,24 @@
 package ac.knu.service;
 
-import lombok.Getter;
+import lombok.Data;
 
-enum Gender{
-    M, F
+enum Gender {
+    MALE, FEMALE
 }
-@Getter
-public class Friend implements Comparable<Friend> {
+
+@Data
+public class Friend {
     private String name;
     private int age;
     private Gender gender;
-    public Friend(String name, int age, Gender gender)
-    {
+
+    public Friend(String name, int age, Gender gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
     }
-    public int compareTo(Friend friend)
-    {
-        return name.compareTo(friend.getName());
+
+    public String toString() {
+        return String.format("%-20s| %d\t| %s", name, age, gender);
     }
 }
