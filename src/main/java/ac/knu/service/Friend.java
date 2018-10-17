@@ -7,7 +7,7 @@ enum Gender {
 }
 
 @Data
-public class Friend implements Comparable<Friend> {
+public class Friend {
     private String name;
     private int age;
     private Gender gender;
@@ -18,8 +18,7 @@ public class Friend implements Comparable<Friend> {
         this.gender = gender;
     }
 
-    public int compareTo(Friend friend)
-    {
-        return name.compareTo(friend.getName());
+    public String toString() {
+        return String.format("%-20s| %d\t| %s", name, age, gender);
     }
 }

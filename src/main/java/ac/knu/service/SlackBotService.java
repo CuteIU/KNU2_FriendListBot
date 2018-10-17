@@ -18,18 +18,15 @@ import javax.annotation.PostConstruct;
 @Service
 @JBot
 @Slf4j
-public class SlackBotService extends Bot
-{
+public class SlackBotService extends Bot {
     @Autowired
     private CommandParsingService commandParsingService;
-    private SortedArrayList<Friend> friendList = new SortedArrayList<>();
 
     @Controller(events = {EventType.DIRECT_MENTION})
-    public void onReceiveDM(WebSocketSession session, Event event)
-    {
+    public void onReceiveDM(WebSocketSession session, Event event) {
         String text = event.getText();
-        log.info(text);
-        String answer = commandParsingService.parseCommand(text, friendList);
+        System.out.println(text);
+        String answer = commandParsingService.parseCommand(text.substring(text.indexOf(" ") + 1));
         reply(session, event, answer);
     }
 

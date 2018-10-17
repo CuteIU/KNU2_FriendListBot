@@ -1,38 +1,87 @@
 package ac.knu.service;
 
 import org.springframework.stereotype.Service;
-import java.util.StringTokenizer;
+
+import java.util.*;
 
 @Service
-public class CommandParsingService
-{
-    public CommandParsingService()
-    {
+public class CommandParsingService {
+    private TreeMap<String, Friend> friendList;
 
+    public CommandParsingService() {
+        friendList = new TreeMap<>();
     }
-    public String parseCommand(String command, SortedArrayList friendList)
-    {
+
+    public String parseCommand(String command) {
         StringTokenizer words = new StringTokenizer(command, " ");
-        switch(words.nextToken())
-        {
-            case "add":
-                Friend newFriend = new Friend(words.nextToken(), Integer.parseInt(words.nextToken()), Gender.valueOf(words.nextToken()));
-                friendList.insert(newFriend);
-                return "add done!";
-            case "remove":
-                friendList.remove(words.nextToken());
-                return "remove done!";
-            case "list":
-                friendList.print();
-                return "list done!";
-            case "find":
-                if(friendList.search(words.nextToken())) {
-                    return "find done!";
+        switch(words.nextToken().toLowerCase()) {
+            case "add": {
+                if (words.countTokens() < 3) {
+                    return "Add fail!: Insufficient parameters";
                 }
-                else {
-                    return "find fail!";
+                String name = words.nextToken();
+                String ageStr = words.nextToken();
+                String genderStr = words.nextToken();
+                int age;
+                Gender gender;
+                try {
+                    age = Integer.parseInt(ageStr);
+                } catch (NumberFormatException e) {
+                    return "Add fail!: Invalid parameter - age";
                 }
+                if (genderStr.equalsIgnoreCase("M") || genderStr.equalsIgnoreCase("Male") || genderStr.equals("남") || genderStr.equals("남성") || genderStr.equals("남자")) {
+                    gender = Gender.MALE;
+                } else if (genderStr.equalsIgnoreCase("F") || genderStr.equalsIgnoreCase("Female") || genderStr.equals("여") || genderStr.equals("여성") || genderStr.equals("여자")) {
+                    gender = Gender.FEMALE;
+                } else {
+                    return "Add fail!: Invalid parameter - gender";
+                }
+                Friend newFriend = new Friend(name, age, gender);
+                if (friendList.containsKey(name)) {
+                    return "Add fail!: Name duplication";
+                }
+                friendList.put(name, newFriend);
+                return "Add done!";
+            }
+            case "remove": {
+                if (words.countTokens() < 1) {
+                    return "Remove fail!: Insufficient parameters";
+                }
+                String name = words.nextToken();
+                if(!friendList.containsKey(name)) {
+                    return "Remove fail!: Name does not exist";
+                }
+                friendList.remove(name);
+                return "Remove done!";
+            }
+            case "list": {
+                return getFriendList() + "\nList done!";
+            }
+            case "find": {
+                if (words.countTokens() < 1) {
+                    return "Find fail!: Insufficient parameters";
+                }
+                String name = words.nextToken();
+                if(!friendList.containsKey(name)) {
+                    return "Find fail!: Friend is not exist";
+                }
+                Friend friend = friendList.get(name);
+                return "Find done!\nName: " + friend.getName() + "\nAge: " + friend.getAge() + "\nGender: " + friend.getGender();
+            }
+            case "time": {
+                Date date = new Date();
+                return "Current Time is: " + date.getTime();
+            }
+            default: return "Not command";
         }
-        return "Not command";
+    }
+
+    public String getFriendList() {
+        StringBuilder stringBuilder = new StringBuilder(String.format("%-20s| %s\t| %s\n", "Name", "Age", "Gender"));
+        stringBuilder.append("------------------------------------\n");
+        for(Friend friend: friendList.values()) {
+            stringBuilder.append(friend + "\n");
+        }
+        return stringBuilder.toString();
     }
 }
