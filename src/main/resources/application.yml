@@ -1,5 +1,4 @@
-slackBotToken: xoxb-456115090198-458038720162-w8oMR10tWlouNWMbxcNu4HSA
-#xoxb-426108924053-452310362497-bu7cYtSLUg33Z2mf2eQIWtyb
+slackBotToken: xoxb-426108924053-452310362497-bu7cYtSLUg33Z2mf2eQIWtyb
 # slack integrations
 slackApi: https://slack.com/api
 slashCommandToken: TODO
