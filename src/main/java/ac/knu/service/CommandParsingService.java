@@ -2,6 +2,8 @@ package ac.knu.service;
 
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Service
@@ -69,8 +71,9 @@ public class CommandParsingService {
                 return "Find done!\nName: " + friend.getName() + "\nAge: " + friend.getAge() + "\nGender: " + friend.getGender();
             }
             case "time": {
-                Date date = new Date();
-                return "Current Time is: " + date.getTime();
+                Date now = new Date();
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초 입니다.");
+                return "Current Time is: " + simpleDateFormat.format(now);
             }
             default: return "Not command";
         }
