@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e2f155e-35d3-47f3-86b6-3a03cd958c50" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ac/knu/SlackBotApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ac/knu/SlackBotApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ac/knu/service/CommandParsingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ac/knu/service/CommandParsingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ac/knu/service/CommandParsingServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ac/knu/service/CommandParsingServiceTest.java" afterDir="false" />
     </list>
@@ -137,17 +137,32 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1622370995">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.16" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="2263" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2263" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ac/knu/service/CommandParsingServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1426">
-              <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-399">
+              <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -155,8 +170,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ac/knu/service/FriendTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="380">
+              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+              <folding>
+                <element signature="e#338#339#0" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,8 +183,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/SlackBotApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+            <state relative-caret-position="209">
+              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,12 +195,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/CommandParsingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="323">
+              <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#288#289#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
+                <element signature="method#addNewFriend#0;class#CommandParsingService#0" />
+                <element signature="method#addToFriendListIsSuccessOrFailure#0;class#CommandParsingService#0" />
+                <element signature="method#getAge#0;class#CommandParsingService#0" />
+                <element signature="method#removeFriend#0;class#CommandParsingService#0" />
+                <element signature="method#removeSuccessOrFailure#0;class#CommandParsingService#0" />
+                <element signature="method#findFriend#0;class#CommandParsingService#0" />
+                <element signature="method#findSuccessOrFailure#0;class#CommandParsingService#0" />
+                <element signature="method#printCurrentTime#0;class#CommandParsingService#0" />
+                <element signature="method#parameterIsInsufficient#0;class#CommandParsingService#0" />
+                <element signature="method#getFriendList#0;class#CommandParsingService#0" />
               </folding>
             </state>
           </provider>
@@ -190,8 +217,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/Friend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+            <state relative-caret-position="247">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -199,8 +226,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/SlackBotService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="532">
+              <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -239,7 +266,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
     <option name="width" value="1440" />
     <option name="height" value="835" />
@@ -250,70 +277,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="knu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="knu" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KNU2_FriendListBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KNU2_FriendListBot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -322,12 +293,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539933996821" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../refactoring-samples" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540038478503" />
+    <property name="last_opened_file_path" value="C:/Git/KNU2_FriendListBot" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -346,17 +318,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SlackBotApplication">
-    <configuration name="SlackBotApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ac.knu.SlackBotApplication" />
+  <component name="RunManager" selected="Android JUnit.CommandParsingServiceTest">
+    <configuration name="CommandParsingServiceTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="slackbot" />
-      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=slack" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ac.knu.*" />
+          <option name="PATTERN" value="ac.knu.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="ac.knu.service" />
+      <option name="MAIN_CLASS_NAME" value="ac.knu.service.CommandParsingServiceTest" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -375,7 +348,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandParsingServiceTest.bot_should_understand_list_command" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommandParsingServiceTest.열명_이상의_친구를_추가하면_경고_메세지_출력" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="slackbot" />
       <extension name="coverage">
         <pattern>
@@ -385,13 +358,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="ac.knu.service" />
       <option name="MAIN_CLASS_NAME" value="ac.knu.service.CommandParsingServiceTest" />
-      <option name="METHOD_NAME" value="bot_should_understand_list_command" />
+      <option name="METHOD_NAME" value="열명_이상의_친구를_추가하면_경고_메세지_출력" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandParsingServiceTest.bot_should_understand_time_command" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CommandParsingServiceTest.대소문자만_차이나는_같은_이름의_친구를_추가하려고_하면_경고_메시지_출력" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="slackbot" />
       <extension name="coverage">
         <pattern>
@@ -401,24 +374,42 @@
       </extension>
       <option name="PACKAGE_NAME" value="ac.knu.service" />
       <option name="MAIN_CLASS_NAME" value="ac.knu.service.CommandParsingServiceTest" />
-      <option name="METHOD_NAME" value="bot_should_understand_time_command" />
+      <option name="METHOD_NAME" value="대소문자만_차이나는_같은_이름의_친구를_추가하려고_하면_경고_메시지_출력" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandParsingServiceTest.bot_should_sort_list" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="slackbot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ac.knu.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ac.knu.service" />
+      <option name="MAIN_CLASS_NAME" value="ac.knu.service.CommandParsingServiceTest" />
+      <option name="METHOD_NAME" value="bot_should_sort_list" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.SlackBotApplication" />
       <item itemvalue="JUnit.CommandParsingServiceTest" />
-      <item itemvalue="JUnit.CommandParsingServiceTest.bot_should_understand_list_command" />
-      <item itemvalue="JUnit.CommandParsingServiceTest.bot_should_understand_time_command" />
+      <item itemvalue="Android JUnit.CommandParsingServiceTest" />
+      <item itemvalue="JUnit.CommandParsingServiceTest.열명_이상의_친구를_추가하면_경고_메세지_출력" />
+      <item itemvalue="JUnit.CommandParsingServiceTest.대소문자만_차이나는_같은_이름의_친구를_추가하려고_하면_경고_메시지_출력" />
+      <item itemvalue="JUnit.CommandParsingServiceTest.bot_should_sort_list" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SlackBotApplication" />
+        <item itemvalue="Android JUnit.CommandParsingServiceTest" />
         <item itemvalue="JUnit.CommandParsingServiceTest" />
-        <item itemvalue="JUnit.CommandParsingServiceTest.bot_should_understand_list_command" />
-        <item itemvalue="JUnit.CommandParsingServiceTest.bot_should_understand_time_command" />
+        <item itemvalue="JUnit.CommandParsingServiceTest.bot_should_sort_list" />
+        <item itemvalue="JUnit.CommandParsingServiceTest.대소문자만_차이나는_같은_이름의_친구를_추가하려고_하면_경고_메시지_출력" />
+        <item itemvalue="JUnit.CommandParsingServiceTest.열명_이상의_친구를_추가하면_경고_메세지_출력" />
       </list>
     </recent_temporary>
   </component>
@@ -436,42 +427,41 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_list_command - 2018.10.12 at 15h 47m 42s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_list_command" configurationId="JUnit" />
+    <history-entry file="CommandParsingServiceTest_bot_should_sort_list - 2018.10.20 at 20h 04m 25s.xml">
+      <configuration name="CommandParsingServiceTest.bot_should_sort_list" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_list_command - 2018.10.12 at 15h 51m 22s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_list_command" configurationId="JUnit" />
+    <history-entry file="CommandParsingServiceTest_bot_should_sort_list - 2018.10.20 at 20h 08m 36s.xml">
+      <configuration name="CommandParsingServiceTest.bot_should_sort_list" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_list_command - 2018.10.12 at 15h 52m 52s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_list_command" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_list_command - 2018.10.12 at 15h 53m 34s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_list_command" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_list_command - 2018.10.12 at 15h 53m 41s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_list_command" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_time_command - 2018.10.12 at 15h 58m 37s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_time_command" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_time_command - 2018.10.12 at 16h 00m 09s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_time_command" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CommandParsingServiceTest - 2018.10.12 at 16h 02m 21s.xml">
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 20h 08m 48s.xml">
       <configuration name="CommandParsingServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CommandParsingServiceTest_bot_should_understand_list_command - 2018.10.12 at 16h 03m 30s.xml">
-      <configuration name="CommandParsingServiceTest.bot_should_understand_list_command" configurationId="JUnit" />
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 20h 43m 30s.xml">
+      <configuration name="CommandParsingServiceTest" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="CommandParsingServiceTest - 2018.10.12 at 16h 04m 24s.xml">
-      <configuration name="CommandParsingServiceTest" configurationId="JUnit" />
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 20h 49m 44s.xml">
+      <configuration name="CommandParsingServiceTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 20h 59m 16s.xml">
+      <configuration name="CommandParsingServiceTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 21h 04m 32s.xml">
+      <configuration name="CommandParsingServiceTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 21h 12m 32s.xml">
+      <configuration name="CommandParsingServiceTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 21h 16m 02s.xml">
+      <configuration name="CommandParsingServiceTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="CommandParsingServiceTest - 2018.10.20 at 21h 17m 44s.xml">
+      <configuration name="CommandParsingServiceTest" configurationId="AndroidJUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21073826" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19619326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -480,15 +470,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31058496" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.24247226" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3181818" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.24247226" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3296355" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49853587" weight="0.3296355" />
       <window_info anchor="bottom" id="Inspection Results" order="11" visible="true" weight="0.14772727" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -499,6 +489,35 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08784773" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49853587" visible="true" weight="0.24247226" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3181818" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" visible="true" weight="0.24247226" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49853587" weight="0.3296355" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" visible="true" weight="0.14772727" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -525,58 +544,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/SlackBotService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/Friend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ac/knu/service/CommandParsingServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1426">
-          <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="247">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ac/knu/service/FriendTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="380">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/SlackBotApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/SlackBotService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state relative-caret-position="532">
+          <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/CommandParsingService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/SlackBotApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        <state relative-caret-position="209">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ac/knu/service/CommandParsingServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ac/knu/service/CommandParsingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addNewFriend#0;class#CommandParsingService#0" />
+            <element signature="method#addToFriendListIsSuccessOrFailure#0;class#CommandParsingService#0" />
+            <element signature="method#getAge#0;class#CommandParsingService#0" />
+            <element signature="method#removeFriend#0;class#CommandParsingService#0" />
+            <element signature="method#removeSuccessOrFailure#0;class#CommandParsingService#0" />
+            <element signature="method#findFriend#0;class#CommandParsingService#0" />
+            <element signature="method#findSuccessOrFailure#0;class#CommandParsingService#0" />
+            <element signature="method#printCurrentTime#0;class#CommandParsingService#0" />
+            <element signature="method#parameterIsInsufficient#0;class#CommandParsingService#0" />
+            <element signature="method#getFriendList#0;class#CommandParsingService#0" />
           </folding>
         </state>
       </provider>
