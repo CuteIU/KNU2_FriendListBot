@@ -7,12 +7,7 @@ import java.util.*;
 
 @Service
 public class CommandParsingService {
-    private TreeMap<String, Friend> friendList;
-
-    public CommandParsingService() {
-        friendList = new TreeMap<>();
-    }
-
+    private TreeMap<String, Friend> friendList = new TreeMap<>();
     public String parseCommand(String command) {
         StringTokenizer commandTokens = new StringTokenizer(command, " ");
         switch (commandTokens.nextToken().toLowerCase()) {
