@@ -2,26 +2,22 @@ package ac.knu.service;
 
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Service
 public class CommandParsingService {
-    private TreeMap<String, Friend> friendList;
-
-    public CommandParsingService() {
-        friendList = new TreeMap<>();
-    }
-
+    private TreeMap<String, Friend> friendList = new TreeMap<>();
     public String parseCommand(String command) {
-        StringTokenizer words = new StringTokenizer(command, " ");
-        switch(words.nextToken().toLowerCase()) {
+        StringTokenizer commandTokens = new StringTokenizer(command, " ");
+        switch (commandTokens.nextToken().toLowerCase()) {
             case "add": {
-                if (words.countTokens() < 3) {
+                if (commandTokens.countTokens() < 3) {
                     return "Add fail!: Insufficient parameters";
                 }
-                String name = words.nextToken();
-                String ageStr = words.nextToken();
-                String genderStr = words.nextToken();
+                String name = commandTokens.nextToken();
+                String ageStr = commandTokens.nextToken();
+                String genderStr = commandTokens.nextToken();
                 int age;
                 Gender gender;
                 try {
@@ -44,11 +40,11 @@ public class CommandParsingService {
                 return "Add done!";
             }
             case "remove": {
-                if (words.countTokens() < 1) {
+                if (commandTokens.countTokens() < 1) {
                     return "Remove fail!: Insufficient parameters";
                 }
-                String name = words.nextToken();
-                if(!friendList.containsKey(name)) {
+                String name = commandTokens.nextToken();
+                if (!friendList.containsKey(name)) {
                     return "Remove fail!: Name does not exist";
                 }
                 friendList.remove(name);
@@ -58,28 +54,30 @@ public class CommandParsingService {
                 return getFriendList() + "\nList done!";
             }
             case "find": {
-                if (words.countTokens() < 1) {
+                if (commandTokens.countTokens() < 1) {
                     return "Find fail!: Insufficient parameters";
                 }
-                String name = words.nextToken();
-                if(!friendList.containsKey(name)) {
+                String name = commandTokens.nextToken();
+                if (!friendList.containsKey(name)) {
                     return "Find fail!: Friend is not exist";
                 }
                 Friend friend = friendList.get(name);
                 return "Find done!\nName: " + friend.getName() + "\nAge: " + friend.getAge() + "\nGender: " + friend.getGender();
             }
             case "time": {
-                Date date = new Date();
-                return "Current Time is: " + date.getTime();
+                Date now = new Date();
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초 입니다.");
+                return "Current Time is: " + simpleDateFormat.format(now);
             }
-            default: return "Not command";
+            default:
+                return "Not command";
         }
     }
 
     public String getFriendList() {
         StringBuilder stringBuilder = new StringBuilder(String.format("%-20s| %s\t| %s\n", "Name", "Age", "Gender"));
         stringBuilder.append("------------------------------------\n");
-        for(Friend friend: friendList.values()) {
+        for (Friend friend : friendList.values()) {
             stringBuilder.append(friend + "\n");
         }
         return stringBuilder.toString();
