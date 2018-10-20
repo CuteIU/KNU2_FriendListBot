@@ -136,7 +136,7 @@ public class CommandParsingService {
         return friendList.size() == 10;
     }
 
-    public String getFriendList() {
+    private String getFriendList() {
         StringBuilder stringBuilder = new StringBuilder(String.format("%-20s| %s\t| %s\n", "Name", "Age", "Gender"));
         stringBuilder.append("------------------------------------\n");
         for (Friend friend : friendList.values()) {
