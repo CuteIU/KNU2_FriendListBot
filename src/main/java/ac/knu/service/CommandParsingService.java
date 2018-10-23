@@ -2,7 +2,6 @@ package ac.knu.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -27,7 +26,7 @@ public class CommandParsingService {
         if(isFriendListFull()) {
             return "Add fail!: If you want to add a new fiend, Remove friend first";
         }
-        if(isParameterIsInsufficient(commandTokens,3)){
+        if(isParameterInsufficient(commandTokens,3)){
             return "Add fail!: Insufficient parameters";
         }
 
@@ -53,7 +52,7 @@ public class CommandParsingService {
         return "Add done!";
     }
 
-    private boolean isParameterIsInsufficient(StringTokenizer commandTokens, int necessaryParameterNumber) {
+    private boolean isParameterInsufficient(StringTokenizer commandTokens, int necessaryParameterNumber) {
         return commandTokens.countTokens() < necessaryParameterNumber;
     }
 
@@ -81,16 +80,16 @@ public class CommandParsingService {
 
     private Gender getGender(String genderStr) {
         if (genderStr.equalsIgnoreCase("M") || genderStr.equalsIgnoreCase("Male") || genderStr.equals("남") || genderStr.equals("남성") || genderStr.equals("남자")) {
-            return Gender.MALE;
+            return Gender.Male;
         } else if (genderStr.equalsIgnoreCase("F") || genderStr.equalsIgnoreCase("Female") || genderStr.equals("여") || genderStr.equals("여성") || genderStr.equals("여자")) {
-            return Gender.FEMALE;
+            return Gender.Female;
         } else {
             return null;
         }
     }
 
     private String removeFriend(StringTokenizer commandTokens) {
-        if (isParameterIsInsufficient(commandTokens,1)) {
+        if (isParameterInsufficient(commandTokens,1)) {
             return "Remove fail!: Insufficient parameters";
         }
         String name = getName(commandTokens.nextToken());
@@ -103,7 +102,7 @@ public class CommandParsingService {
     }
 
     private String findFriend(StringTokenizer commandTokens) {
-        if (isParameterIsInsufficient(commandTokens,1)) {
+        if (isParameterInsufficient(commandTokens,1)) {
             return "Find fail!: Insufficient parameters";
         }
         String name = getName(commandTokens.nextToken());
@@ -116,13 +115,13 @@ public class CommandParsingService {
     }
 
     private String getFriendList() {
-        StringBuilder stringBuilder = new StringBuilder(String.format("%-20s| %s\t| %s\n", "Name", "Age", "Gender"));
-        stringBuilder.append("------------------------------------\n");
+        StringBuilder listFormat = new StringBuilder(String.format("%-20s| %s\t| %s\n", "Name", "Age", "Gender"));
+        listFormat.append("------------------------------------\n");
         for (Friend friend : friendList.values()) {
-            stringBuilder.append(friend)
+            listFormat.append(friend)
                          .append("\n");
         }
-        return stringBuilder.toString();
+        return listFormat.toString();
     }
 
     private String printCurrentTime(Date now) {
