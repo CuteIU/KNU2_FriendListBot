@@ -25,8 +25,8 @@ public class SlackBotService extends Bot {
     @Controller(events = {EventType.DIRECT_MENTION})
     public void onReceiveDM(WebSocketSession session, Event event) {
         String text = event.getText();
-        String answer = commandParsingService.parseCommand(text.substring(text.indexOf(" ") + 1));
-        reply(session, event, answer);
+        String commentByBot = commandParsingService.parseCommand(text.substring(text.indexOf(" ") + 1));
+        reply(session, event, commentByBot);
     }
 
     @Value("${slackBotToken}")

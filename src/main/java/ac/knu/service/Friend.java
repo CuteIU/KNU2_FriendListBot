@@ -3,7 +3,7 @@ package ac.knu.service;
 import lombok.Data;
 
 enum Gender {
-    MALE, FEMALE
+    Male, Female
 }
 
 @Data
