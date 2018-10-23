@@ -21,7 +21,6 @@ public class CommandParsingServiceTest {
     }
 
     @Test
-
     public void When_add_there_is_not_enough_information_alert_warning_message() {
         String command = commandParsingService.parseCommand("add 양동화 23");
         assertEquals("Add fail!: Insufficient parameters", command);
