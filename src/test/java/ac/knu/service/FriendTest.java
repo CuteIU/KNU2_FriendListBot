@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class FriendTest {
-    private Friend friend = new Friend("김재성", 22, Gender.MALE);
+    private final Friend friend = new Friend("김재성", 22, Gender.MALE);
 
     @Test
     public void get_Friend_name_by_lombok() {
@@ -13,9 +13,7 @@ public class FriendTest {
     }
 
     @Test
-    public void get_Friend_age_by_lombok() {
-        assertEquals(22, friend.getAge());
-    }
+    public void get_Friend_age_by_lombok() { assertEquals(22, friend.getAge()); }
 
     @Test
     public void get_Friend_gender_by_lombok() {

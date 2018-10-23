@@ -48,8 +48,23 @@ public class CommandParsingServiceTest {
     @Test
     public void 대소문자만_차이나는_같은_이름의_친구를_추가하려고_하면_경고_메시지_출력(){
         commandParsingService.parseCommand("add Kim 23 F");
-        String command = commandParsingService.parseCommand("add kim 23 F");
+        String command = commandParsingService.parseCommand("add KIM 23 F");
         assertEquals("Add fail!: Name duplication", command);
+    }
+
+    @Test
+    public void 열명_이상의_친구를_추가하면_경고_메시지_출력(){
+        commandParsingService.parseCommand("add Sam 21 M");
+        commandParsingService.parseCommand("add Amy 22 F");
+        commandParsingService.parseCommand("add Sophia 23 F");
+        commandParsingService.parseCommand("add Noah 20 M");
+        commandParsingService.parseCommand("add Liam 21 F");
+        commandParsingService.parseCommand("add John 22 M");
+        commandParsingService.parseCommand("add Wendy 23 F");
+        commandParsingService.parseCommand("add Ryan 20 M");
+        commandParsingService.parseCommand("add Jin 20 M");
+        String command = commandParsingService.parseCommand("add Ruby 21 F");
+        assertEquals("Add fail!: If you want to add a new fiend, Remove friend first", command);
     }
 
     @Test
@@ -84,9 +99,9 @@ public class CommandParsingServiceTest {
         String command = commandParsingService.parseCommand("list");
         StringBuilder result = new StringBuilder(String.format("%-20s| %s\t| %s\n", "Name", "Age", "Gender"));
         result.append("------------------------------------\n");
-        result.append(String.format("%-20s| %s\t| %s\n", "amy", "22", Gender.FEMALE));
-        result.append(String.format("%-20s| %s\t| %s\n", "sam", "21", Gender.MALE));
-        result.append(String.format("%-20s| %s\t| %s\n", "sophia", "23", Gender.FEMALE));
+        result.append(String.format("%-20s| %s\t| %s\n", "Amy", "22", Gender.FEMALE));
+        result.append(String.format("%-20s| %s\t| %s\n", "Sam", "21", Gender.MALE));
+        result.append(String.format("%-20s| %s\t| %s\n", "Sophia", "23", Gender.FEMALE));
         result.append(String.format("%-20s| %s\t| %s\n", "김재성", "22", Gender.MALE));
         assertTrue(command.contains(result.toString()));
     }
@@ -110,23 +125,15 @@ public class CommandParsingServiceTest {
     }
 
     @Test
-    public void bot_should_work_time_command() {
-        String command = commandParsingService.parseCommand("time");
-        assertTrue(command.contains("Current Time is"));
+    public void find_할_때_대소문자_구분_없이_찾을_수_있음() {
+        commandParsingService.parseCommand("add kim 22 M");
+        String command = commandParsingService.parseCommand("find KIM");
+        assertTrue(command.contains("Find done!"));
     }
 
     @Test
-    public void 열명_이상의_친구를_추가하면_경고_메시지_출력(){
-        commandParsingService.parseCommand("add Sam 21 M");
-        commandParsingService.parseCommand("add Amy 22 F");
-        commandParsingService.parseCommand("add Sophia 23 F");
-        commandParsingService.parseCommand("add Noah 20 M");
-        commandParsingService.parseCommand("add Liam 21 F");
-        commandParsingService.parseCommand("add John 22 M");
-        commandParsingService.parseCommand("add Wendy 23 F");
-        commandParsingService.parseCommand("add Ryan 20 M");
-        commandParsingService.parseCommand("add Jin 20 M");
-        String command = commandParsingService.parseCommand("add Ruby 21 F");
-        assertEquals("If you want to add a new fiend, Remove friend first",command);
+    public void bot_should_work_time_command() {
+        String command = commandParsingService.parseCommand("time");
+        assertTrue(command.contains("Current Time is"));
     }
 }
