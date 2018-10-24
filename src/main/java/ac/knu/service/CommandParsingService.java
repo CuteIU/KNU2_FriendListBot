@@ -9,28 +9,31 @@ import java.util.*;
 public class CommandParsingService {
 
     private final TreeMap<String, Friend> friendList = new TreeMap<>();
+    private String commandType;
 
     public String parseCommand(String command) {
         StringTokenizer commandTokens = new StringTokenizer(command, " ");
-        switch (commandTokens.nextToken().toLowerCase()) {
-            case "add": { return addFriend(commandTokens); }
-            case "remove": { return removeFriend(commandTokens); }
-            case "list": { return getFriendList() + "\nList done!"; }
-            case "find": { return findFriend(commandTokens); }
-            case "time": { return printCurrentTime(new Date()); }
+        commandType = makeCapitalize(commandTokens.nextToken());
+
+        switch (commandType) {
+            case "Add": { return addFriend(commandTokens); }
+            case "Remove": { return removeFriend(commandTokens); }
+            case "List": { return getFriendList(); }
+            case "Find": { return findFriend(commandTokens); }
+            case "Time": { return printCurrentTime(new Date()); }
             default: { return "Not command"; }
         }
     }
 
     private String addFriend(StringTokenizer commandTokens) {
         if(isFriendListFull()) {
-            return "Add fail!: If you want to add a new fiend, Remove friend first";
+            return getExceptionMessage(ExceptionType.FullFriendList);
         }
         if(isParameterInsufficient(commandTokens,3)){
-            return "Add fail!: Insufficient parameters";
+            return getExceptionMessage(ExceptionType.InsufficientParameter);
         }
 
-        String name = getName(commandTokens.nextToken());
+        String name = makeCapitalize(commandTokens.nextToken());
         int age = getAge(commandTokens.nextToken());
         Gender gender = getGender(commandTokens.nextToken());
 
@@ -38,18 +41,15 @@ public class CommandParsingService {
     }
 
     private String addSuccessOrFailure(Friend newFriend) {
-        if(isInvalidAge(newFriend.getAge())) {
-            return "Add fail!: Invalid parameter - age";
-        }
-        if(isInvalidGender(newFriend.getGender())) {
-            return "Add fail!: Invalid parameter - gender";
+        if(isInvalidAge(newFriend.getAge()) || isInvalidGender(newFriend.getGender())) {
+            return getExceptionMessage(ExceptionType.InvalidParameter);
         }
         if(friendList.containsKey(newFriend.getName())) {
-            return "Add fail!: Name duplication";
+            return getExceptionMessage(ExceptionType.DuplicatedFriendName);
         }
 
         friendList.put(newFriend.getName(), newFriend);
-        return "Add done!";
+        return getSuccessMessage();
     }
 
     private boolean isParameterInsufficient(StringTokenizer commandTokens, int necessaryParameterNumber) {
@@ -68,7 +68,7 @@ public class CommandParsingService {
         return gender == null;
     }
 
-    private String getName(String nameStr) { return StringUtils.capitalize(nameStr.toLowerCase()); }
+    private String makeCapitalize(String nameStr) { return StringUtils.capitalize(nameStr.toLowerCase()); }
 
     private int getAge(String ageStr) {
         try {
@@ -90,28 +90,28 @@ public class CommandParsingService {
 
     private String removeFriend(StringTokenizer commandTokens) {
         if (isParameterInsufficient(commandTokens,1)) {
-            return "Remove fail!: Insufficient parameters";
+            return getExceptionMessage(ExceptionType.InsufficientParameter);
         }
-        String name = getName(commandTokens.nextToken());
+        String name = makeCapitalize(commandTokens.nextToken());
         if(!friendList.containsKey((name))) {
-            return "Remove fail!: Name does not exist";
+            return getExceptionMessage(ExceptionType.FriendNotFound);
         }
 
         friendList.remove(name);
-        return "Remove done!";
+        return getSuccessMessage();
     }
 
     private String findFriend(StringTokenizer commandTokens) {
         if (isParameterInsufficient(commandTokens,1)) {
-            return "Find fail!: Insufficient parameters";
+            return getExceptionMessage(ExceptionType.InsufficientParameter);
         }
-        String name = getName(commandTokens.nextToken());
+        String name = makeCapitalize(commandTokens.nextToken());
         if (!friendList.containsKey(name)) {
-            return "Find fail!: Friend is not exist";
+            return getExceptionMessage(ExceptionType.FriendNotFound);
         }
 
         Friend friend = friendList.get(name);
-        return "Find done!\nName: " + friend.getName() + "\nAge: " + friend.getAge() + "\nGender: " + friend.getGender();
+        return "Name: " + friend.getName() + "\nAge: " + friend.getAge() + "\nGender: " + friend.getGender();
     }
 
     private String getFriendList() {
@@ -119,7 +119,7 @@ public class CommandParsingService {
         listFormat.append("------------------------------------\n");
         for (Friend friend : friendList.values()) {
             listFormat.append(friend)
-                         .append("\n");
+                      .append("\n");
         }
         return listFormat.toString();
     }
@@ -127,5 +127,15 @@ public class CommandParsingService {
     private String printCurrentTime(Date now) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초 입니다.");
         return "Current Time is: " + simpleDateFormat.format(now);
+    }
+
+    private String getExceptionMessage(ExceptionType exceptionType) {
+        Exception exception = new Exception();
+        exception.setExceptionType(exceptionType);
+        return commandType + exception;
+    }
+
+    private String getSuccessMessage() {
+        return commandType + " done!";
     }
 }

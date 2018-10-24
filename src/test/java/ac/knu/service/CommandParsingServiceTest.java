@@ -29,13 +29,13 @@ public class CommandParsingServiceTest {
     @Test
     public void When_add_there_is_wrong_input_alert_warning_message() {
         String command = commandParsingService.parseCommand("add 양동화 23살 여성");
-        assertEquals("Add fail!: Invalid parameter - age", command);
+        assertEquals("Add fail!: Invalid parameter", command);
     }
 
     @Test
     public void When_add_there_is_wrong_Gender_input_alert_warning_message() {
         String command = commandParsingService.parseCommand("add 양동화 23 중성");
-        assertEquals("Add fail!: Invalid parameter - gender", command);
+        assertEquals("Add fail!: Invalid parameter", command);
     }
 
     @Test
@@ -81,13 +81,16 @@ public class CommandParsingServiceTest {
     @Test
     public void Try_remove_not_exist_friend_alert_warning_message() {
         String command = commandParsingService.parseCommand("remove 양동화");
-        assertEquals("Remove fail!: Name does not exist", command);
+        assertEquals("Remove fail!: Friend is not exist", command);
     }
 
     @Test
     public void Bot_should_work_list_command() {
         String command = commandParsingService.parseCommand("list");
-        assertTrue(command.contains("List done!"));
+        StringBuilder result = new StringBuilder(String.format("%-20s| %s\t| %s\n", "Name", "Age", "Gender"));
+        result.append("------------------------------------\n");
+        result.append(String.format("%-20s| %s\t| %s\n", "김재성", "22", Gender.Male));
+        assertEquals(command, result.toString());
     }
 
     @Test
@@ -108,7 +111,7 @@ public class CommandParsingServiceTest {
     @Test
     public void Bot_should_work_find_command() {
         String command = commandParsingService.parseCommand("find 김재성");
-        assertTrue(command.contains("Find done!"));
+        assertTrue(command.contains("김재성"));
     }
 
     @Test
@@ -127,7 +130,7 @@ public class CommandParsingServiceTest {
     public void Find_should_work_ignores_case() {
         commandParsingService.parseCommand("add kim 22 M");
         String command = commandParsingService.parseCommand("find KIM");
-        assertTrue(command.contains("Find done!"));
+        assertTrue(command.contains("Kim"));
     }
 
     @Test
