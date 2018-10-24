@@ -2,6 +2,7 @@ package ac.knu.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -16,20 +17,32 @@ public class CommandParsingService {
         commandType = makeCapitalize(commandTokens.nextToken());
 
         switch (commandType) {
-            case "Add": { return addFriend(commandTokens); }
-            case "Remove": { return removeFriend(commandTokens); }
-            case "List": { return getFriendList(); }
-            case "Find": { return findFriend(commandTokens); }
-            case "Time": { return printCurrentTime(new Date()); }
-            default: { return "Not command"; }
+            case "Add": {
+                return addFriend(commandTokens);
+            }
+            case "Remove": {
+                return removeFriend(commandTokens);
+            }
+            case "List": {
+                return getFriendList();
+            }
+            case "Find": {
+                return findFriend(commandTokens);
+            }
+            case "Time": {
+                return printCurrentTime(new Date());
+            }
+            default: {
+                return "Not command";
+            }
         }
     }
 
     private String addFriend(StringTokenizer commandTokens) {
-        if(isFriendListFull()) {
+        if (isFriendListFull()) {
             return getExceptionMessage(ExceptionType.FullFriendList);
         }
-        if(isParameterInsufficient(commandTokens,3)){
+        if (isParameterInsufficient(commandTokens, 3)) {
             return getExceptionMessage(ExceptionType.InsufficientParameter);
         }
 
@@ -41,10 +54,10 @@ public class CommandParsingService {
     }
 
     private String addSuccessOrFailure(Friend newFriend) {
-        if(isInvalidAge(newFriend.getAge()) || isInvalidGender(newFriend.getGender())) {
+        if (isInvalidAge(newFriend.getAge()) || isInvalidGender(newFriend.getGender())) {
             return getExceptionMessage(ExceptionType.InvalidParameter);
         }
-        if(friendList.containsKey(newFriend.getName())) {
+        if (friendList.containsKey(newFriend.getName())) {
             return getExceptionMessage(ExceptionType.DuplicatedFriendName);
         }
 
@@ -68,7 +81,9 @@ public class CommandParsingService {
         return gender == null;
     }
 
-    private String makeCapitalize(String nameStr) { return StringUtils.capitalize(nameStr.toLowerCase()); }
+    private String makeCapitalize(String nameStr) {
+        return StringUtils.capitalize(nameStr.toLowerCase());
+    }
 
     private int getAge(String ageStr) {
         try {
@@ -89,11 +104,11 @@ public class CommandParsingService {
     }
 
     private String removeFriend(StringTokenizer commandTokens) {
-        if (isParameterInsufficient(commandTokens,1)) {
+        if (isParameterInsufficient(commandTokens, 1)) {
             return getExceptionMessage(ExceptionType.InsufficientParameter);
         }
         String name = makeCapitalize(commandTokens.nextToken());
-        if(!friendList.containsKey((name))) {
+        if (!friendList.containsKey((name))) {
             return getExceptionMessage(ExceptionType.FriendNotFound);
         }
 
@@ -102,7 +117,7 @@ public class CommandParsingService {
     }
 
     private String findFriend(StringTokenizer commandTokens) {
-        if (isParameterInsufficient(commandTokens,1)) {
+        if (isParameterInsufficient(commandTokens, 1)) {
             return getExceptionMessage(ExceptionType.InsufficientParameter);
         }
         String name = makeCapitalize(commandTokens.nextToken());
@@ -119,7 +134,7 @@ public class CommandParsingService {
         listFormat.append("------------------------------------\n");
         for (Friend friend : friendList.values()) {
             listFormat.append(friend)
-                      .append("\n");
+                    .append("\n");
         }
         return listFormat.toString();
     }

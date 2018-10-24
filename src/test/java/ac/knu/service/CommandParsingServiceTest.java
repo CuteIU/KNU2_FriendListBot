@@ -2,6 +2,7 @@ package ac.knu.service;
 
 import org.junit.Test;
 import org.junit.Before;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -45,14 +46,14 @@ public class CommandParsingServiceTest {
     }
 
     @Test
-    public void When_try_add_same_name_but_upper_case_lower_case_difference_alert_warning_message(){
+    public void When_try_add_same_name_but_upper_case_lower_case_difference_alert_warning_message() {
         commandParsingService.parseCommand("add Kim 23 F");
         String command = commandParsingService.parseCommand("add KIM 23 F");
         assertEquals("Add fail!: Name duplication", command);
     }
 
     @Test
-    public void Try_add_friends_more_than_10_alert_warning_message(){
+    public void Try_add_friends_more_than_10_alert_warning_message() {
         commandParsingService.parseCommand("add Sam 21 M");
         commandParsingService.parseCommand("add Amy 22 F");
         commandParsingService.parseCommand("add Sophia 23 F");

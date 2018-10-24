@@ -13,7 +13,9 @@ public class FriendTest {
     }
 
     @Test
-    public void get_Friend_age_by_lombok() { assertEquals(22, friend.getAge()); }
+    public void get_Friend_age_by_lombok() {
+        assertEquals(22, friend.getAge());
+    }
 
     @Test
     public void get_Friend_gender_by_lombok() {
