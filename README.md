@@ -37,6 +37,7 @@
 데이터에 중복을 허용하지 않는다는 전제 하에, List 인터페이스보다는 Set 인터페이스를 사용하는 것이 적절해 보인다. Set 인터페이스에는 HashSet과 TreeSet이 있는데, TreeSet의 경우 트리에 데이터를 담으면서 값에 따라 정렬을 하여 순서가 정해진다. 따라서 TreeSet의 삽입 연산은 HashSet보다 성능이 좋지 않다. 하지만, 친구 목록을 사용자에게 보여줄 때 정렬된 상태로 보여주면 좋기 때문에, 우리는 TreeSet을 사용하여 자료구조를 구현할 예정이었는데, 삽입, 검색, 삭제 등의 연산을 편리하게 사용하기 위해, "이름"을 Key로 가지고 "이름, 나이, 성별" 정보를 Value로 가지는 TreeMap을 이용하여 구현할 것이다.
 
 ## 주의사항
+- 허용된 명령어(add, remove, find, list, time)가 아닐 경우 Bot이 "Not command"라고 말합니다.
 - [Code Analyze]-[Inspect Code]를 통해 Refactoring을 한 상태이지만, SlackBotApplication과 SlackBotService는 프로젝트를 수정하기 전부터 존재하고 있던 class이기 때문에 이 부분에서 발생하는 issue는 일부러 해결하지 않았습니다.
 - 그리고, 기존 public으로 선언된 class들을 일부러 private로 변경하지 않았습니다.
 
